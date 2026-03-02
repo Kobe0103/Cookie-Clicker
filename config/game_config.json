@@ -1,0 +1,38 @@
+{
+  "theme": {
+    "title": "Cookie Clicker",
+    "resourceName": "cookies",
+    "resourceNameSingular": "cookie",
+    "actionLabel": "Bake Cookie",
+    "emoji": "🍪",
+    "background": "#fff9ef",
+    "primary": "#8b5e34",
+    "accent": "#d7924a"
+  },
+  "upgrades": [
+    {
+      "id": "grandma",
+      "name": "Grandma",
+      "description": "A friendly grandma bakes cookies for you.",
+      "base_cost": 15,
+      "cps": 0.2,
+      "cost_multiplier": 1.15
+    },
+    {
+      "id": "oven",
+      "name": "Oven",
+      "description": "A proper oven for large batch baking.",
+      "base_cost": 100,
+      "cps": 1.5,
+      "cost_multiplier": 1.15
+    },
+    {
+      "id": "factory",
+      "name": "Cookie Factory",
+      "description": "Industrial scale cookie output.",
+      "base_cost": 500,
+      "cps": 8,
+      "cost_multiplier": 1.15
+    }
+  ]
+}
