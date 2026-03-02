@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Themeable Clicker</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <h1 id="game-title">Clicker</h1>
+        <button id="reset-btn" class="ghost-btn" title="Reset progress">Reset Save</button>
+      </header>
+
+      <section class="card stats-card">
+        <div class="resource-main">
+          <span id="resource-emoji" class="resource-emoji">🌙</span>
+          <div>
+            <p class="label">Total</p>
+            <h2><span id="resource-count">0</span> <span id="resource-name">resources</span></h2>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div><p class="label">Clicks</p><p id="total-clicks">0</p></div>
+          <div><p class="label">Per second</p><p id="cps">0</p></div>
+        </div>
+      </section>
+
+      <section class="card action-card">
+        <button id="click-btn" class="click-btn">Generate</button>
+      </section>
+
+      <section class="card upgrades-card">
+        <h3>Upgrades</h3>
+        <div id="upgrades" class="upgrade-list"></div>
+      </section>
+    </main>
+
+    <template id="upgrade-template">
+      <article class="upgrade-item">
+        <div>
+          <h4 class="upgrade-name"></h4>
+          <p class="upgrade-desc"></p>
+          <p class="muted">Owned: <span class="upgrade-owned">0</span></p>
+        </div>
+        <button class="buy-btn">Buy</button>
+      </article>
+    </template>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
