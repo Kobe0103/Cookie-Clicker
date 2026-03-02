@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Themeable Clicker</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel hero">
+        <h1 id="title"></h1>
+        <p><span id="resource-emoji"></span> <strong id="resource-count">0</strong> <span id="resource-name"></span></p>
+        <p>Total clicks: <span id="total-clicks">0</span></p>
+        <p>Per second: <span id="cps">0</span></p>
+        <button id="click-btn" class="click-btn"></button>
+      </section>
+
+      <section class="panel">
+        <h2>Upgrades</h2>
+        <div id="upgrades" class="upgrades"></div>
+      </section>
+    </main>
+
+    <template id="upgrade-template">
+      <article class="upgrade-card">
+        <div>
+          <h3 class="upgrade-name"></h3>
+          <p class="upgrade-description"></p>
+          <small>Owned: <span class="upgrade-owned">0</span></small>
+        </div>
+        <button class="buy-btn">Buy</button>
+      </article>
+    </template>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
