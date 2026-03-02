@@ -1,32 +1,26 @@
-# Themeable SQL Clicker
+# Themeable Clicker (No Database)
 
-A simple Cookie Clicker-style game with a **working SQL database** (SQLite) and themeable content.
-
-## Features
-- Click to gain resources
-- Buy upgrades that generate passive resources/sec
-- State persisted in `game.db` using SQL tables
-- Easy customization via `config/game_config.json`
+This version is fully frontend-based and **does not use SQL/database**.
+Your progress is saved in the browser with `localStorage`.
 
 ## Run
+From project root:
+
 ```bash
-python3 server.py
+python3 -m http.server 8000
 ```
-Then open <http://localhost:8000>.
 
-## Customizing theme and upgrades
+Then open <http://localhost:8000/templates/>.
+
+## How saving works
+- Save key: `themeable_clicker_save_v2`
+- Data stored: resources, clicks, owned upgrades, last update timestamp
+- Works across refreshes and browser restarts (same browser profile)
+
+## Customize theme and subject
 Edit `config/game_config.json`:
-- `theme.title`, `theme.resourceName`, `theme.actionLabel`, colors, emoji
-- Add/remove upgrades in `upgrades`
+- Change labels (`title`, `resourceName`, `actionLabel`)
+- Change emoji/colors (`emoji`, `background`, `primary`, `accent`)
+- Change/add upgrades in `upgrades` (`name`, `description`, `base_cost`, `cps`)
 
-Example ideas:
-- Coffee Clicker (`resourceName`: beans)
-- Space Miner (`resourceName`: ore)
-- Book Publisher (`resourceName`: pages)
-
-After editing config, refresh the app.
-
-## SQL schema
-`server.py` creates these tables:
-- `game_state(id, resource_count, total_clicks, last_updated)`
-- `owned_upgrades(upgrade_id, quantity)`
+You can turn this into anything (coffee, mining, books, etc.) without code changes.

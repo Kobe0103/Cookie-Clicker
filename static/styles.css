@@ -1,66 +1,108 @@
 :root {
-  --bg: #fff9ef;
-  --primary: #8b5e34;
-  --accent: #d7924a;
+  --bg: #0b0f14;
+  --panel: #121923;
+  --panel-2: #161f2b;
+  --text: #eaf1fb;
+  --muted: #93a5bd;
+  --primary: #4cc9f0;
+  --accent: #7b2cbf;
+  --danger: #f25f5c;
 }
 
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: #2f2418;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #121a24 0%, var(--bg) 45%);
+  color: var(--text);
 }
-.layout {
-  max-width: 980px;
+
+.app-shell {
+  width: min(860px, 94vw);
   margin: 2rem auto;
-  padding: 0 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-.panel {
-  background: #ffffffcc;
-  border: 2px solid #00000014;
-  border-radius: 12px;
-  padding: 1rem;
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.hero { text-align: center; }
-.click-btn {
+
+.card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid #273548;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 10px 35px #00000045;
+}
+
+.resource-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resource-emoji { font-size: 2rem; }
+
+.label, .muted {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.stats-grid {
   margin-top: 1rem;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 0;
-  background: radial-gradient(circle, var(--accent), var(--primary));
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.action-card { text-align: center; }
+
+.click-btn {
+  width: min(360px, 90%);
+  height: 110px;
+  border-radius: 12px;
+  border: 1px solid #3a4e66;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
   color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
   cursor: pointer;
 }
-.click-btn:active { transform: scale(0.97); }
-.upgrades { display: flex; flex-direction: column; gap: 0.75rem; }
-.upgrade-card {
+.click-btn:active { transform: scale(0.99); }
+
+.upgrade-list { display: grid; gap: 0.75rem; }
+
+.upgrade-item {
+  border: 1px solid #2c3d52;
+  background: #101722;
+  border-radius: 10px;
+  padding: 0.75rem;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  align-items: center;
-  border: 1px solid #00000022;
-  border-radius: 10px;
-  padding: 0.75rem;
 }
-.buy-btn {
-  border: 0;
-  background: var(--primary);
-  color: white;
-  padding: 0.5rem 0.8rem;
-  border-radius: 8px;
+
+.buy-btn, .ghost-btn {
+  border-radius: 9px;
+  border: 1px solid #3b516d;
+  background: #1c2735;
+  color: var(--text);
+  padding: 0.55rem 0.8rem;
   cursor: pointer;
 }
-.buy-btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-@media (max-width: 800px) {
-  .layout { grid-template-columns: 1fr; }
+
+.buy-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.ghost-btn { border-color: #5f3442; color: #ffd4df; }
+.ghost-btn:hover { background: #32202a; }
+
+h1, h2, h3, h4, p { margin: 0; }
+h2 { margin-top: 0.2rem; }
+
+@media (max-width: 640px) {
+  .upgrade-item { flex-direction: column; }
 }
